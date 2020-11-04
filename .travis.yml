@@ -1,0 +1,26 @@
+language: node_js
+cache:
+    directories:
+        - node_modules
+        - ~/.npm
+node_js: 
+    - '12'
+git:
+    depth: 3
+script:
+    - yarn test
+notifications:
+    email:
+        recipients:
+            - bukaro.dany@gmail.com
+        on_success: always
+        on_failure: always
+deploy:
+    provide: heroku
+    skip-cleanup: true
+    keep-history: true
+    api_key: 38a32b2b-f159-4601-856a-9b1164575479
+    app: platzi-store-backend-leis94
+    on:
+        repo: leis94/paltzi-store-backend
+
